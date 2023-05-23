@@ -24,7 +24,7 @@ const authenticateAdmin = (req, res, next) => {
 
 // User Signup
 app.post('/signup', (req, res) => {
-    const { name, email, password, role } = req.body;
+    const { name, email, password } = req.body;
 
     if (!name || !email || !password) {
         return res.status(400).json({ error: 'Name, email, and password are required' });
@@ -38,8 +38,7 @@ app.post('/signup', (req, res) => {
     const user = {
         name,
         email,
-        password,
-        role
+        password
     };
     users.push(user);
 
