@@ -85,7 +85,7 @@ app.post('/questions', authenticateAdmin, (req, res) => {
 app.post('/submissions', (req, res) => {
     const { id, description, title, solution } = req.body;
 
-    if (!id || !solution || !description || !title || !solution) {
+    if (!id || !description || !title || !solution) {
         return res.status(400).json({ error: 'id, solution, description, title, solution are required' });
     }
 
